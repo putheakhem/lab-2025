@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\TagController;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-    $posts = Post::get(); // select * from table posts;
+
+    $posts = Post::create(
+    ); // select * from table posts;
     return view('pages.home', [
         'items' => $posts
     ]);   // resources/view/home.blade.php
@@ -17,6 +21,10 @@ Route::get('/blog', function () {
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::get('tags', [TagController::class, 'index']);
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
