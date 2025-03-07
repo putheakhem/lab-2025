@@ -16,3 +16,8 @@
 5. Run `npm run dev` to build the assets
 6. Run `php artisan serve` to start the server or use `php -S localhost:8000 -t public` to start the server
 7. Visit `http://localhost:8000` in your browser
+
+
+Article : title, description, content
+
+- articles table
