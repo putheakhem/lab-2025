@@ -7,11 +7,9 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-
-    $posts = Post::create(
-    ); // select * from table posts;
+    $posts = Post::all();
     return view('pages.home', [
-        'items' => $posts
+        'posts' => $posts
     ]);   // resources/view/home.blade.php
 })->name('home');
 
