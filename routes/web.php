@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TagController;
 use App\Models\Post;
-use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -15,6 +15,8 @@ Route::get('/', function () {
     ]);   // resources/view/home.blade.php
 })->name('home');
 
+
+Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/blog', function () {
     return view('pages.blog');   // resources/view/blog.blade.php
 })->name('blog');
