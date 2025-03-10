@@ -13,6 +13,13 @@ Route::get('/', function () {
     ]);   // resources/view/home.blade.php
 })->name('home');
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/home', function () {
+   return view('home');
+});
 
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/blog', function () {
